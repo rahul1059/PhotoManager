@@ -1,0 +1,11 @@
+<div class="albums">
+    <mat-card *ngFor="let album of getAlbums()">
+        <mat-card-header>
+            <div mat-card-avatar>
+                <mat-checkbox (change)="selectAlbum($event, album.id)"></mat-checkbox>
+            </div>
+            <mat-card-title>{{album.title}}</mat-card-title>
+        </mat-card-header>
+    </mat-card>
+</div>
+<button mat-button [routerLink]="['/photos/']" [disabled]="this.selected.length < 1">Show Photos</button>
